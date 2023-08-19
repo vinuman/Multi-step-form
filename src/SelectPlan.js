@@ -80,7 +80,7 @@ const SelectPlan = () => {
               <h2 className=" pl-2 text-[1rem] font-bold">Yearly</h2>
             </div>
             <div className="flex justify-between  w-[70%] pt-16">
-              <button className=" bg-slate-400 w-[8rem] h-[3rem] text-white rounded-md font-bold  ">
+              <button className=" bg-white w-[8rem] h-[3rem] text-gray-400 rounded-md font-bold  ">
                 Go back
               </button>
               <button className="bg-[#022959] w-[8rem] h-[3rem] text-white rounded-md font-bold ">
