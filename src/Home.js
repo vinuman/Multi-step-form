@@ -2,10 +2,11 @@ import React from "react";
 import Sidebar from "./components/Sidebar";
 
 const Home = () => {
+  const highlight = 1;
   return (
     <>
       <div className=" p-8 flex w-[100%]">
-        <Sidebar />
+        <Sidebar highlight={highlight} />
         <div className="  w-[70%] pl-16 pt-8">
           <h1 className="text-[3rem] font-bold text-[#022959]">
             Personal info
@@ -19,7 +20,7 @@ const Home = () => {
                 Name
               </label>
               <input
-                className=" outline outline-gray-500 rounded-md h-[3rem] p-4"
+                className=" outline outline-gray-300 rounded-md h-[3rem] p-4"
                 type="text"
                 placeholder="e.g. Stephen King"
               ></input>
@@ -29,7 +30,7 @@ const Home = () => {
                 Email Address
               </label>
               <input
-                className=" outline outline-gray-500 rounded-md h-[3rem] p-4"
+                className=" outline outline-gray-300 rounded-md h-[3rem] p-4"
                 type="text"
                 placeholder="e.g. stephenking@lorem.com"
               ></input>
@@ -39,7 +40,7 @@ const Home = () => {
                 Phone Number
               </label>
               <input
-                className=" outline outline-gray-500 rounded-md h-[3rem] p-4"
+                className=" outline outline-gray-300 rounded-md h-[3rem] p-4"
                 type="text"
                 placeholder="e.g. +1 234 567 890"
               ></input>

@@ -1,7 +1,7 @@
 import React from "react";
 import sidebarimage from "../images/bg-sidebar-desktop.svg";
 
-const Sidebar = () => {
+const Sidebar = ({ highlight }) => {
   return (
     <>
       <div className="w-[30%] h-[90vh] rounded-md relative">
@@ -13,7 +13,11 @@ const Sidebar = () => {
         <div className="absolute top-[5%] left-[15%]">
           {/* div ONE */}
           <div className="flex justify-around items-center  w-[280px] mb-[3rem]">
-            <div className=" w-[3rem] h-[3rem] text-[1.5rem] rounded-full border border-white flex justify-center items-center text-white font-ubuntu">
+            <div
+              className={`w-[3rem] h-[3rem] text-[1.5rem] rounded-full border border-white flex justify-center items-center  font-ubuntu ${
+                highlight === 1 ? "bg-[#BEE2FD] text-[black]" : "text-white"
+              }`}
+            >
               1
             </div>
             <div className="flex flex-col  w-[70%]">
@@ -27,7 +31,11 @@ const Sidebar = () => {
           </div>
           {/* div TWO */}
           <div className="flex justify-around items-center  w-[280px] mb-[3rem]">
-            <div className=" w-[3rem] h-[3rem] text-[1.5rem] rounded-full border border-white flex justify-center items-center text-white font-ubuntu">
+            <div
+              className={`w-[3rem] h-[3rem] text-[1.5rem] rounded-full border border-white flex justify-center items-center  font-ubuntu ${
+                highlight === 2 ? "bg-[#BEE2FD] text-[black]" : "text-white"
+              }`}
+            >
               2
             </div>
             <div className="flex flex-col  w-[70%]">
@@ -41,7 +49,11 @@ const Sidebar = () => {
           </div>
           {/* div THREE */}
           <div className="flex justify-around items-center  w-[280px] mb-[3rem]">
-            <div className=" w-[3rem] h-[3rem] text-[1.5rem] rounded-full border border-white flex justify-center items-center text-white font-ubuntu">
+            <div
+              className={`w-[3rem] h-[3rem] text-[1.5rem] rounded-full border border-white flex justify-center items-center  font-ubuntu ${
+                highlight === 3 ? "bg-[#BEE2FD] text-[black]" : "text-white"
+              }`}
+            >
               3
             </div>
             <div className="flex flex-col  w-[70%]">
@@ -55,7 +67,11 @@ const Sidebar = () => {
           </div>
           {/* div FOUR */}
           <div className="flex justify-around items-center  w-[280px] mb-[3rem]">
-            <div className=" w-[3rem] h-[3rem] text-[1.5rem] rounded-full border border-white flex justify-center items-center text-white font-ubuntu">
+            <div
+              className={`w-[3rem] h-[3rem] text-[1.5rem] rounded-full border border-white flex justify-center items-center  font-ubuntu ${
+                highlight === 4 ? "bg-[#BEE2FD] text-[black]" : "text-white"
+              }`}
+            >
               4
             </div>
             <div className="flex flex-col  w-[70%]">
