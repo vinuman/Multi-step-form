@@ -4,7 +4,7 @@ import sidebarimage from "../images/bg-sidebar-desktop.svg";
 const Sidebar = ({ highlight }) => {
   return (
     <>
-      <div className="w-[30%] h-[90vh] rounded-md relative">
+      <div className="w-[30%] h-[90vh] rounded-md relative hidden lg:block">
         <img
           className=" min-w-full h-[90vh]"
           src={sidebarimage}

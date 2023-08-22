@@ -3,6 +3,7 @@ import Home from "./Home";
 import SelectPlan from "./SelectPlan";
 import Addons from "./AddOns";
 import FinishUp from "./FinishUp";
+import ThankYou from "./ThankYou";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/selectplan" element={<SelectPlan />}></Route>
           <Route path="/addons" element={<Addons />}></Route>
           <Route path="/finish" element={<FinishUp />}></Route>
+          <Route path="/thanks" element={<ThankYou />}></Route>
         </Routes>
       </div>
     </>
