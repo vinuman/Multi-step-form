@@ -121,7 +121,7 @@ const SelectPlan = () => {
             </div>
             <div className="flex justify-between  w-[70%] pt-16">
               <button
-                onClick={() => navigate(-1)}
+                onClick={() => navigate("/")}
                 className=" bg-white w-[8rem] h-[3rem] text-gray-400 rounded-md font-bold  "
               >
                 Go back

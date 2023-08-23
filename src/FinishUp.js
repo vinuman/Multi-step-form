@@ -1,7 +1,9 @@
 import React from "react";
 import Sidebar from "./components/Sidebar";
+import { useNavigate } from "react-router-dom";
 
 const FinishUp = () => {
+  const navigate = useNavigate();
   const highlight = 4;
   return (
     <>
@@ -53,7 +55,10 @@ const FinishUp = () => {
             </div>
             {/* Total div ends */}
             <div className="flex justify-between  w-[70%] pt-16">
-              <button className=" bg-white w-[8rem] h-[3rem] text-gray-400 rounded-md font-bold  ">
+              <button
+                onClick={() => navigate("/addons")}
+                className=" bg-white w-[8rem] h-[3rem] text-gray-400 rounded-md font-bold  "
+              >
                 Go back
               </button>
               <button className="bg-[#483EFF] w-[8rem] h-[3rem] text-white rounded-md font-bold ">
