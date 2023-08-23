@@ -1,7 +1,11 @@
 import React from "react";
 import Sidebar from "./components/Sidebar";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import validator from "validator";
+import { addFormDetails } from "./features/form/formSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addedFields } from "./features/form/formSlice";
 
 const Home = () => {
   const [name, setName] = useState("");
@@ -11,18 +15,39 @@ const Home = () => {
   const [emailValid, setEmailValid] = useState(true);
   const [numberValid, setNumberValid] = useState(true);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const form = useSelector(addedFields);
 
+  //to retail the form inputs after navigation
+  useEffect(() => {
+    if (form) {
+      setName(form.name);
+      setEmail(form.email);
+      setNumber(form.number);
+    }
+  }, [form]);
+
+  //form validation, redux state update and navigation
   const handleBtnClick = () => {
-    if (name.trim() === "" || email.trim() === "" || number.trim() === "") {
+    if (
+      name.trim() === "" ||
+      email.trim() === "" ||
+      number.trim() === "" ||
+      !validator.isEmail(email)
+    ) {
       name.trim() === "" ? setNameValid(false) : setNameValid(true);
       email.trim() === "" ? setEmailValid(false) : setEmailValid(true);
       number.trim() === "" ? setNumberValid(false) : setNumberValid(true);
+      !validator.isEmail(email) ? setEmailValid(false) : setEmailValid(true);
     } else {
+      dispatch(addFormDetails({ name, email, number }));
       navigate("/selectplan");
     }
   };
 
+  //highlighting the first page
   const highlight = 1;
+
   return (
     <>
       <div className=" p-8 flex w-[100%]">
@@ -50,7 +75,9 @@ const Home = () => {
               </div>
               <input
                 onChange={(e) => setName(e.target.value)}
-                className=" outline outline-gray-300 rounded-md h-[3rem] p-4"
+                className={`outline  rounded-md h-[3rem] p-4 focus:ring focus:ring-[#483EFF] ${
+                  !nameValid ? "outline-red-700" : "outline-gray-300"
+                }`}
                 type="text"
                 placeholder="e.g. Stephen King"
                 value={name}
@@ -71,7 +98,9 @@ const Home = () => {
               </div>
               <input
                 onChange={(e) => setEmail(e.target.value)}
-                className=" outline outline-gray-300 rounded-md h-[3rem] p-4"
+                className={`outline  rounded-md h-[3rem] p-4 focus:ring focus:ring-[#483EFF] ${
+                  !emailValid ? "outline-red-700" : "outline-gray-300"
+                }`}
                 type="text"
                 placeholder="e.g. stephenking@lorem.com"
                 value={email}
@@ -92,7 +121,9 @@ const Home = () => {
               </div>
               <input
                 onChange={(e) => setNumber(e.target.value)}
-                className=" outline outline-gray-300 rounded-md h-[3rem] p-4"
+                className={`outline  rounded-md h-[3rem] p-4 focus:ring focus:ring-[#483EFF] ${
+                  !numberValid ? "outline-red-700" : "outline-gray-300"
+                }`}
                 type="text"
                 placeholder="e.g. +1 234 567 890"
                 value={number}
