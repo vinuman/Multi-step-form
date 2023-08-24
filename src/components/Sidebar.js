@@ -4,13 +4,14 @@ import sidebarimage from "../images/bg-sidebar-desktop.svg";
 const Sidebar = ({ highlight }) => {
   return (
     <>
-      <div className="w-[30%] h-[90vh] rounded-md relative hidden lg:block">
+      <div className="w-[100%]  lg:w-[30%] h-[90vh] rounded-md relative">
         <img
-          className=" min-w-full h-[90vh]"
+          className=" min-w-full h-[90vh] hidden lg:block"
           src={sidebarimage}
           alt="background image"
         ></img>
-        <div className="absolute top-[5%] left-[15%]">
+
+        <div className="absolute flex lg:flex-col top-[5%] left-[15%]">
           {/* div ONE */}
           <div className="flex justify-around items-center  w-[280px] mb-[3rem]">
             <div
@@ -20,7 +21,7 @@ const Sidebar = ({ highlight }) => {
             >
               1
             </div>
-            <div className="flex flex-col  w-[70%]">
+            <div className="flex flex-col  w-[70%] ">
               <p className=" font-ubuntu text-[#ABBCFF] text-[1rem] uppercase">
                 Step 1
               </p>

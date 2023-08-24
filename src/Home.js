@@ -1,5 +1,6 @@
 import React from "react";
 import Sidebar from "./components/Sidebar";
+
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import validator from "validator";
@@ -50,8 +51,9 @@ const Home = () => {
 
   return (
     <>
-      <div className=" p-8 flex w-[100%]">
+      <div className=" p-8 flex flex-col lg:flex-row  w-[100%]">
         <Sidebar highlight={highlight} />
+
         <div className="  w-[70%] pl-16 pt-8">
           <h1 className="text-[3rem] font-bold text-[#022959]">
             Personal info
@@ -132,7 +134,7 @@ const Home = () => {
           </form>
           <button
             onClick={handleBtnClick}
-            className="bg-[#022959] w-[8rem] h-[3rem] text-white rounded-md font-bold ml-[30rem] mt-8 hover:bg-[#928CFF]"
+            className="bg-[#022959] w-[8rem] h-[3rem] text-white rounded-md font-bold lg:ml-[30rem] mt-8 hover:bg-[#928CFF]"
           >
             next step
           </button>
