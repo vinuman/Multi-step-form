@@ -8,7 +8,7 @@ import ThankYou from "./ThankYou";
 function App() {
   return (
     <>
-      <div className="">
+      <div className="font-ubuntu">
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/selectplan" element={<SelectPlan />}></Route>

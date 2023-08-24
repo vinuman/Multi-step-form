@@ -3,7 +3,7 @@ import Sidebar from "./components/Sidebar";
 import { useNavigate } from "react-router-dom";
 import { selectedAddOns } from "./features/addSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { addOns } from "./features/addSlice";
+import { toggleOne, toggleTwo, toggleThree } from "./features/addSlice";
 
 const AddOns = () => {
   const navigate = useNavigate();
@@ -12,11 +12,14 @@ const AddOns = () => {
   const highlight = 3;
 
   const handleOnline = () => {
-    dispatch(
-      addOns({
-        online: true,
-      })
-    );
+    dispatch(toggleOne(!activeAddOns.online_services));
+  };
+  const handleStorage = () => {
+    dispatch(toggleTwo(!activeAddOns.large_storage));
+  };
+
+  const handleCustom = () => {
+    dispatch(toggleThree(!activeAddOns.custom_profle));
   };
 
   return (
@@ -42,7 +45,7 @@ const AddOns = () => {
               <input
                 checked={activeAddOns.online_services ? true : false}
                 type="checkbox"
-                id="checkbox"
+                id="1"
                 className="w-[1.2rem] h-[1.2rem] cursor-pointer rounded-md mr-8"
               />
               <div className=" flex flex-col  w-[50%]">
@@ -58,6 +61,7 @@ const AddOns = () => {
 
             {/* Second Div */}
             <div
+              onClick={handleStorage}
               className={`${
                 activeAddOns.large_storage
                   ? "bg-[#F8F9FF] border-[#483EFF]"
@@ -67,7 +71,7 @@ const AddOns = () => {
               <input
                 checked={activeAddOns.large_storage ? true : false}
                 type="checkbox"
-                id="checkbox"
+                id="2"
                 className="w-[1.2rem] h-[1.2rem] cursor-pointer rounded-md mr-8"
               />
               <div className=" flex flex-col  w-[50%]">
@@ -83,6 +87,7 @@ const AddOns = () => {
 
             {/* Third Div */}
             <div
+              onClick={handleCustom}
               className={`${
                 activeAddOns.custom_profle
                   ? "bg-[#F8F9FF] border-[#483EFF]"
@@ -92,7 +97,7 @@ const AddOns = () => {
               <input
                 checked={activeAddOns.custom_profle ? true : false}
                 type="checkbox"
-                id="checkbox"
+                id="3"
                 className="w-[1.2rem] h-[1.2rem] cursor-pointer rounded-md mr-8"
               />
               <div className=" flex flex-col  w-[50%]">
@@ -107,13 +112,13 @@ const AddOns = () => {
             <div className="flex justify-between  w-[70%] pt-16">
               <button
                 onClick={() => navigate("/selectplan")}
-                className=" bg-white w-[8rem] h-[3rem] text-gray-400 rounded-md font-bold  "
+                className=" bg-white w-[8rem] h-[3rem] text-gray-400 rounded-md font-bold hover:text-[#022959] "
               >
                 Go back
               </button>
               <button
                 onClick={() => navigate("/finish")}
-                className="bg-[#022959] w-[8rem] h-[3rem] text-white rounded-md font-bold "
+                className="bg-[#022959] w-[8rem] h-[3rem] text-white rounded-md font-bold hover:bg-[#928CFF]"
               >
                 next step
               </button>

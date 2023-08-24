@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   amount: "",
-  plan: "",
   arcade: true,
   advanced: false,
   pro: false,

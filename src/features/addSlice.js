@@ -10,17 +10,20 @@ const addSlice = createSlice({
   name: "add",
   initialState,
   reducers: {
-    addOns: (state, action) => {
-      const { online, storage, profile } = action.payload;
-      state.online_services = online;
-      state.large_storage = storage;
-      state.custom_profle = profile;
+    toggleOne: (state, action) => {
+      state.online_services = action.payload;
+    },
+    toggleTwo: (state, action) => {
+      state.large_storage = action.payload;
+    },
+    toggleThree: (state, action) => {
+      state.custom_profle = action.payload;
     },
   },
 });
 
 export const selectedAddOns = (state) => state.add;
 
-export const { addOns } = addSlice.actions;
+export const { toggleOne, toggleTwo, toggleThree } = addSlice.actions;
 
 export default addSlice.reducer;

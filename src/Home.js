@@ -132,7 +132,7 @@ const Home = () => {
           </form>
           <button
             onClick={handleBtnClick}
-            className="bg-[#022959] w-[8rem] h-[3rem] text-white rounded-md font-bold ml-[30rem] mt-8"
+            className="bg-[#022959] w-[8rem] h-[3rem] text-white rounded-md font-bold ml-[30rem] mt-8 hover:bg-[#928CFF]"
           >
             next step
           </button>
